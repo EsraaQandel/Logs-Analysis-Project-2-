@@ -20,23 +20,14 @@ You will get practice interacting with a live database both from the command lin
 ### Prepare the software and data:
  
   1. Download or Clone [fullstack-nanodegree-vm](https://github.com/udacity/fullstack-nanodegree-vm) repository and Download the data from [here](https://d17h27t6h515a5.cloudfront.net/topher/2016/August/57b5f748_newsdata/newsdata.zip).
-  2. Copy the newsdata.sql file -from the zip file you just downloaded - and content of this current repository
-  3. launch the VM and install all the dependencies by running:
-  
-  ```
-    $ vagrant up
-  ```
-  4. Log using command:
-  
-  ```
-    $ vagrant ssh
-  ```
+  2. Copy the newsdata.sql file -from the zip file you just downloaded - and the content of this current repository
+  3. launch the VM and make sure `vagrant` is up 
 
-  5. Use `psql -d news -f newsdata.sql` to Load the data in local database.
+  4. Use `psql -d news -f newsdata.sql` to Load the data in local database.
 
-  6. Use `psql -d news` to connect to database.
+  5. Use `psql -d news` to connect to database.
   
-  7. Create view error_calc using:
+  6. Create view error_calc using:
   ```
   create view error_calc as select day, round((error::decimal / normal)*100,2) as error_rate from (
    select time::date as day , count(*) as normal , count(case when status NOT LIKE '200 OK' then 1 end) as error 
