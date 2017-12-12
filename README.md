@@ -39,13 +39,14 @@ You will get practice interacting with a live database both from the command lin
   7. Create view error_calc using:
   ```
   create view error_calc as select day, round((error::decimal / normal)*100,2) as error_rate from (
-   select time::date as day , count(*) as normal , count(case when status NOT LIKE '200 OK' then 1 end) as error from log GROUP BY day
+   select time::date as day , count(*) as normal , count(case when status NOT LIKE '200 OK' then 1 end) as error 
+   from log GROUP BY day
   ) as error_percentage; 
   ```
 
 ### Run the reporting tool:
 
   ```
-    $ python3 my_tool.py
+    $ python3 my-tool.py
   ```
   
