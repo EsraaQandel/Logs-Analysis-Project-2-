@@ -35,19 +35,19 @@ results_3 = connect(q3)
 def get_q1_answers():
     print("\n The most popular three articles of all time are : \n")
     for eachObject in results_1:
-        print(str(eachObject[0]) + ' --- ' + str(eachObject[1]) + ' views')
+        print( '%s --- %s views'%(eachObject[0],eachObject[1]))
 
 
 def get_q2_answers():
     print("\n The most popular article authors of all time are : \n")
     for eachObject in results_2:
-        print(str(eachObject[0]) + ' --- ' + str(eachObject[1]) + ' views')
+        print( '%s --- %s views'%(eachObject[0],eachObject[1]))
 
 
 def get_q3_answers():
     print("""\n The days with more than 1% of errors are : \n""")
     for eachObject in results_3:
-        print(str(eachObject[0]) + ' --- ' + str(eachObject[1]) + '% errors')
+        print( '%s --- %s %% errors'%(eachObject[0],eachObject[1]))
 
 
 # print formatted results
